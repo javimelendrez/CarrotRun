@@ -12,6 +12,9 @@ class Carrot{
     jump(){
         this.vy = -25; //moves the jump up
     }
+    hits(bunnies){
+        return collideRectRect(this.x,this.y, this.r,this.r, bunnies.x, bunnies.y, bunnies.r, bunnies.r);
+    }
     move(){
         this.y += this.vy;
         this.vy += this.gravity;

@@ -17,6 +17,10 @@ function draw(){
     for( let b of bunnies){
         b.move();
         b.show();
+        if (carrot.hits(b)) {
+            console.log('game over');
+            noLoop();
+        }
     }
 }
 //if the user press the space key then the jump function will be called
