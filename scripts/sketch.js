@@ -2,13 +2,20 @@ let carrot; //make a carrot  variable
 let bunnies = []; //an array of bunnies
 let score; //this is the score that is going to print on the screen
 let restart_button; //this is a variable that we will use to create the restart button
+let cImg;
+let eImg;
+function preload(){
+    //preload the images
+    cImg = loadImage('carrot.png');
+    eImg = loadImage('evil.png');
+}
 function setup(){
     createCanvas(800,450);
     carrot = new Carrot();
     score = 0; //on setup the score should be 0
 }
 function draw(){
-    background(220);
+    background(255,255,255);
     //call p5 function to draw text for scoer
     text("Score: "+ score, 700,50);
     //call the function to show the carrot

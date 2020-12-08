@@ -11,6 +11,6 @@ class Bunny{
 
     }
     show(){
-        rect(this.x, this.y, this.r, this.r);
+        image(eImg, this.x, this.y, this.r, this.r);
     }
 }

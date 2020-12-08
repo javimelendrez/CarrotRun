@@ -21,6 +21,6 @@ class Carrot{
         this.y = constrain(this.y, 0, height - this.r);
     }
     show(){
-        rect(this.x, this.y, this.r, this.r);
+        image(cImg, this.x, this.y, this.r, this.r);
     }
 }
