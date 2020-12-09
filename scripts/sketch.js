@@ -1,16 +1,19 @@
 let carrot; //make a carrot  variable
 let bunnies = []; //an array of bunnies
 let clouds = []; //an array of clouds
+let coins = []; //an array of coins
 let score; //this is the score that is going to print on the screen
 let restart_button; //this is a variable that we will use to create the restart button
 let cImg;
 let eImg;
 let cloudImg;
+let coinsImg;
 function preload(){
     //preload the images
     cImg = loadImage('carrot.png');
     eImg = loadImage('evil.png');
     cloudImg = loadImage('clouds.png');
+    coinsImg = loadImage('coins.png');
 }
 function setup(){
     createCanvas(800,450);
@@ -26,8 +29,15 @@ function draw(){
     carrot.move();
     //pick a random number between 0 and 1
     if(random(1) < 0.01) {
+        //we going to use this same probability to make the coin above the bunnies
+        var money = new Coins();
+        coins.push(money);
         var taco = new Bunny();
         bunnies.push(taco); //random chance of adding a bunny
+    }
+    for(m of coins){
+        m.move();
+        m.show();
     }
     for( let b of bunnies){
         b.move();
