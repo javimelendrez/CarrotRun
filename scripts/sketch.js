@@ -8,12 +8,16 @@ let cImg;
 let eImg;
 let cloudImg;
 let coinsImg;
+let coinSound; 
 function preload(){
     //preload the images
     cImg = loadImage('carrot.png');
     eImg = loadImage('evil.png');
     cloudImg = loadImage('clouds.png');
     coinsImg = loadImage('coins.png');
+    //preload coin collision sound
+    //soundFormats('wav', 'ogg');
+    coinSound = loadSound('coni.wav' );
 }
 function setup(){
     createCanvas(800,450);
@@ -43,6 +47,7 @@ function draw(){
         //lets dry js shift 
         //remove the coin from the front that will get hit in the array
         if(carrot.inc_points(m)){
+            coinSound.play(); //play the sound on impact
             score++; //increment the store
             //and delete from the array for the sketch to disappear
             coins.shift();
