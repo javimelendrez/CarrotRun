@@ -4,22 +4,31 @@ let clouds = []; //an array of clouds
 let coins = []; //an array of coins
 let score; //this is the score that is going to print on the screen
 let restart_button; //this is a variable that we will use to create the restart button
+//varoables for images
 let cImg;
 let eImg;
 let cloudImg;
 let coinsImg;
-let coinSound; 
+//variables for sounds
+let coinSound;
+let GameOverSound; 
+let mainMusic;
 function preload(){
     //preload the images
-    cImg = loadImage('carrot.png');
-    eImg = loadImage('evil.png');
-    cloudImg = loadImage('clouds.png');
-    coinsImg = loadImage('coins.png');
+    cImg = loadImage('img/carrot.png');
+    eImg = loadImage('img/evil.png');
+    cloudImg = loadImage('img/clouds.png');
+    coinsImg = loadImage('img/coins.png');
     //preload coin collision sound
     //soundFormats('wav', 'ogg');
-    coinSound = loadSound('coni.wav' );
+    coinSound = loadSound('audio/coni.wav' );
+    //preload other sounds possible main music as well
+    GameOverSound = loadSound('audio/gameOver.wav');
+    mainMusic = loadSound('audio/gameMusic.wav');
 }
 function setup(){
+    //start the music right awway
+    mainMusic.play();
     createCanvas(800,450);
     carrot = new Carrot();
     score = 0; //on setup the score should be 0
@@ -33,7 +42,7 @@ function draw(){
     carrot.show();
     carrot.move();
     //pick a random number between 0 and 1
-    if(random(1) < 0.01) {
+    if(random(1) < 0.007)  {
         //we going to use this same probability to make the coin above the bunnies
         var money = new Coins();
         coins.push(money);
@@ -57,6 +66,10 @@ function draw(){
         b.move();
         b.show();
         if (carrot.hits(b)) {
+            //on death stop the main music
+            mainMusic.stop();
+            //play the game over sound
+            GameOverSound.play();
             console.log('game over');
             //we should probably print on the screen game over
             textSize(30); //size of the font
