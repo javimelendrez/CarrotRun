@@ -23,6 +23,7 @@ function setup(){
 function draw(){
     background(0,205,255);
     //call p5 function to draw text for scoer
+    textSize(15);
     text("Score: "+ score, 700,50);
     //call the function to show the carrot
     carrot.show();
