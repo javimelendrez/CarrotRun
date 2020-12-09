@@ -38,6 +38,14 @@ function draw(){
     for(m of coins){
         m.move();
         m.show();
+        //console.log(coins);
+        //lets dry js shift 
+        //remove the coin from the front that will get hit in the array
+        if(carrot.inc_points(m)){
+            score++; //increment the store
+            //and delete from the array for the sketch to disappear
+            coins.shift();
+        }
     }
     for( let b of bunnies){
         b.move();

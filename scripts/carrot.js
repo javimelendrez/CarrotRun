@@ -15,6 +15,9 @@ class Carrot{
     hits(bunnies){
         return collideRectRect(this.x,this.y, this.r,this.r, bunnies.x, bunnies.y, bunnies.r, bunnies.r);
     }
+    inc_points(coins){
+        return collideRectRect(this.x,this.y, this.r,this.r, coins.x, coins.y, coins.r, coins.r);
+    }
     move(){
         this.y += this.vy;
         this.vy += this.gravity;

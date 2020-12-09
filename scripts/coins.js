@@ -8,6 +8,7 @@ class Coins{
     move(){
         this.x -= 16; //we moving at the same speed of the bunny
     }
+
     show(){
         image(coinsImg, this.x, this.y, this.r, this.r);
     }
