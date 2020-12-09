@@ -1,13 +1,16 @@
 let carrot; //make a carrot  variable
 let bunnies = []; //an array of bunnies
+let clouds = []; //an array of clouds
 let score; //this is the score that is going to print on the screen
 let restart_button; //this is a variable that we will use to create the restart button
 let cImg;
 let eImg;
+let cloudImg;
 function preload(){
     //preload the images
     cImg = loadImage('carrot.png');
     eImg = loadImage('evil.png');
+    cloudImg = loadImage('clouds.png');
 }
 function setup(){
     createCanvas(800,450);
@@ -15,7 +18,7 @@ function setup(){
     score = 0; //on setup the score should be 0
 }
 function draw(){
-    background(255,255,255);
+    background(0,205,255);
     //call p5 function to draw text for scoer
     text("Score: "+ score, 700,50);
     //call the function to show the carrot
@@ -53,6 +56,14 @@ function draw(){
             };
             noLoop();
         }
+    }
+    if(random(1) < 0.02){
+        var strife = new Clouds();
+        clouds.push(strife);
+    }
+    for(let c of clouds){
+        c.move();
+        c.show();
     }
 }
 //if the user press the space key then the jump function will be called
