@@ -87,10 +87,7 @@ function draw(){
             // if(mousePressedOver(true)){
 
             // }
-            restart_button.onClick = function rest(){
-                console.log('click');
-                restart();
-            };
+            restart_button.mousePressed(restart);
             noLoop();
         }
     }
@@ -111,6 +108,5 @@ function keyPressed(){
 }
 //creating a restart function for when the user clicks the restart button
 function restart(){
-    console.log('hey look you clicked the restart button');
     document.location.reload(true);
 }
