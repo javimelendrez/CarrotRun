@@ -1,3 +1,5 @@
+//team QC Quarintined Games
+//in this file coin objects are defined and created with a specifix size and position, also there movements and draw functions.
 class Coins{
     constructor(){
         this.r = 75;

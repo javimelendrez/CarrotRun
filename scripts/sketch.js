@@ -1,3 +1,8 @@
+// team QC Quarintined Games
+// in this file the draw functions are called also the setup functions are called to preload audio files and 
+// set up the Canvas . One more thing we create new objects and loop for collisions to see if a user has scored
+// or if the user has lost
+// and one last thing there is a function to restart the game
 let carrot; //make a carrot  variable
 let bunnies = []; //an array of bunnies
 let clouds = []; //an array of clouds
@@ -73,10 +78,10 @@ function draw(){
             console.log('game over');
             //we should probably print on the screen game over
             textSize(30); //size of the font
-            text("Game Over: You were killed by a bunny!", 200, 225);
+            text("Game Over: You were killed by a bunny!", 200, 170);
             //now draw a button for the user to restart the game
             restart_button = createButton("Restart"); //restart the game
-            restart_button.position(400,250);
+            restart_button.position(400,350);
             // if (restart_button.mouseClicked()){
             //     restart();
             // }

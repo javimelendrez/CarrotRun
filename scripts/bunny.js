@@ -1,4 +1,5 @@
-
+//team QC Quarintined Games
+//in this file bunny objects are defined and created with a specifix size and position, also there movements and draw functions.
 class Bunny{
 
     constructor(){

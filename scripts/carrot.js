@@ -1,3 +1,6 @@
+//team QC Quarintined Games
+//in this file carrot objects are defined and created with a specifix size and position, also there movements and draw functions.
+//the other functions are used for detection of collision depending on the object
 class Carrot{
         constructor(){
             //carrot class has an x and a y
